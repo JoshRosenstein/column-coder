@@ -1,3 +1,9 @@
+
+/**
+ * ToColumnNotation
+ * @param columnIndex - integer to convert to column notation 
+ * @param startingIndex -Starting integer that should reference column A
+ */
 export function decode(columnIndex: number, startingIndex = 0) {
     if (columnIndex < startingIndex) {
       throw new Error(
@@ -16,10 +22,16 @@ export function decode(columnIndex: number, startingIndex = 0) {
     return column;
   }
   
-  export function encode(value?: string, startingIndex = 0) {
+
+/**
+ * FromColumnNotation
+ * @param column - Column name to convert to an integer
+ * @param startingIndex -Integer references column A
+ */
+  export function encode(column: string, startingIndex = 0) {
     return (
-      value.split("").reduce((acc, v, i) => {
-        return acc + (v.charCodeAt(0) - 64) * Math.pow(26, value.length - i - 1);
+        column.split("").reduce((acc, v, i) => {
+        return acc + (v.charCodeAt(0) - 64) * Math.pow(26, column.length - i - 1);
       }, 0) +
       (startingIndex - 1)
     );

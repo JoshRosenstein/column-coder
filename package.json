@@ -1,6 +1,6 @@
 {
   "name": "column-coder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "dist-src/index.js",
   "types": "dist-types/index.d.ts",
   "main": "dist-node/index.js",
