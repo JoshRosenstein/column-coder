@@ -1,0 +1,27 @@
+{
+  "name": "column-coder",
+  "version": "1.0.0",
+  "source": "dist-src/index.js",
+  "types": "dist-types/index.d.ts",
+  "main": "dist-node/index.js",
+  "module": "dist-web/index.js",
+  "sideEffects": false,
+  "description": "encode / decode column index to column names with an optional base index",
+  "repository": "https://github.com/JoshRosenstein/column-coder.git",
+  "author": "Josh Rosenstein <32781407+JoshRosenstein@users.noreply.github.com>",
+  "license": "MIT",
+  "files": [
+    "dist-*/",
+    "assets/",
+    "bin/"
+  ],
+  "scripts": {
+    "build:src": "tsc -m ESNext -t ESNext -d --declarationDir ./dist-types --outDir ./dist-src",
+    "build:web": "tsc -m es2015 -t es5 --outDir ./dist-web",
+    "build:node": "tsc",
+    "build": "yarn build:node && yarn build:src && yarn build:web  "
+  },
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
